@@ -79,7 +79,7 @@ const CompanionComponent = ({companionId, subject, topic, name, userName, userIm
             serverMessages: [],
         }
 
-        // @ts-expect-error 
+        // @ts-expect-error vapi.start expects different argument shape
         vapi.start(configureAssistant(voice, style), assistantOverrides)
     }
 

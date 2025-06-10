@@ -9,7 +9,6 @@ const SearchInput = () => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const query = searchParams.get('topic') || '';
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -33,7 +32,8 @@ const SearchInput = () => {
                     router.push(newUrl, { scroll: false });
                 }
             }
-        }, 750)
+        }, 750);
+        return () => clearTimeout(delayDebounceFn);
     }, [searchQuery, router, searchParams, pathname]);
   
 
